@@ -1,4 +1,4 @@
-package com.example.pi_api_kelvin_20180193.ui.theme.entities
+package com.example.pi_api_kelvin_20180193.ui.theme.Deudor
 
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons

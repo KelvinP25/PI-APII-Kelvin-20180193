@@ -12,8 +12,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pi_api_kelvin_20180193.ui.theme.PIAPIKelvin20180193Theme
-import com.example.pi_api_kelvin_20180193.ui.theme.entities.ConsultaPrestamosScreen
-import com.example.pi_api_kelvin_20180193.ui.theme.entities.RegistroPrestamosScreen
+import com.example.pi_api_kelvin_20180193.ui.theme.Deudor.ConsultaPrestamosScreen
+import com.example.pi_api_kelvin_20180193.ui.theme.Deudor.RegistroPrestamosScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
