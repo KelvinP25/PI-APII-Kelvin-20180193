@@ -9,9 +9,10 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 
 @Composable
-fun Registro() {
+fun Registro( navHostController: NavHostController) {
 
     Scaffold(
         topBar = {
@@ -19,7 +20,7 @@ fun Registro() {
         },
     ) {
         Column(Modifier.padding(16.dp)) {
-            OutlinedButton(onClick = { /*TODO*/ }) {
+            OutlinedButton(onClick = { navHostController.navigate("ConsultaNv") }) {
                 Text(text = "Guardar")
             }
         }
