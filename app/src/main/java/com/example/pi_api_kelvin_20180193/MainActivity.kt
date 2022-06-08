@@ -6,16 +6,14 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.pi_api_kelvin_20180193.ui.theme.PIAPIKelvin20180193Theme
-import com.example.pi_api_kelvin_20180193.ui.theme.entities.Consulta
-import com.example.pi_api_kelvin_20180193.ui.theme.entities.Registro
+import com.example.pi_api_kelvin_20180193.ui.theme.entities.ConsultaPrestamosScreen
+import com.example.pi_api_kelvin_20180193.ui.theme.entities.RegistroPrestamosScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,10 +38,10 @@ fun MyApp(){
 
         NavHost(navController = navHostController, startDestination = "ConsultaNv"){
             composable(route = "ConsultaNv") {
-                Consulta(navHostController)
+                ConsultaPrestamosScreen(navHostController)
             }
             composable(route = "RegistroNv") {
-                Registro(navHostController)
+                RegistroPrestamosScreen(navHostController)
             }
         }
     }
