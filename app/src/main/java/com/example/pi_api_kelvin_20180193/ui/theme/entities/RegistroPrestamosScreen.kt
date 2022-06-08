@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
 @Composable
-fun Registro( navHostController: NavHostController) {
+fun RegistroPrestamosScreen(navHostController: NavHostController) {
 
     Scaffold(
         topBar = {
