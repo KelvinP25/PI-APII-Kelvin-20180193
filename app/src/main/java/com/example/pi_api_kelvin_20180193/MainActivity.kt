@@ -3,6 +3,7 @@ package com.example.pi_api_kelvin_20180193
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
@@ -52,7 +53,7 @@ fun MyApp(){
 
 @Composable
 fun RowDeudor(deudor: Deudor){
-    Row{
+    Column(modifier = Modifier.fillMaxSize()) {
         Text(text = deudor.nombre)
         Text(text = deudor.concepto)
         Text(text = deudor.monto.toString())
