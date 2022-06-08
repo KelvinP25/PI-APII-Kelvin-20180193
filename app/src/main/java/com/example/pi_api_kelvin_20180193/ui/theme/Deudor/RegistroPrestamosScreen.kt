@@ -5,7 +5,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -35,20 +35,20 @@ fun RegistroPrestamosScreen(
                 value = viewModel.concepto,
                 onValueChange = { viewModel.concepto = it },
                 modifier = Modifier.fillMaxWidth(),
-                label = { Text(text = "Nombre") },
-                leadingIcon = { Icon(imageVector = Icons.Filled.Person, contentDescription = null) }
+                label = { Text(text = "Concepto") },
+                leadingIcon = { Icon(imageVector = Icons.Filled.CardMembership, contentDescription = null) }
             )
             OutlinedTextField(
                 value = viewModel.monto.toString(),
                 onValueChange = { viewModel.monto = it.toDouble() },
                 modifier = Modifier.fillMaxWidth(),
-                label = { Text(text = "Nombre") },
-                leadingIcon = { Icon(imageVector = Icons.Filled.Person, contentDescription = null) }
+                label = { Text(text = "Monto") },
+                leadingIcon = { Icon(imageVector = Icons.Filled.AttachMoney, contentDescription = null) }
             )
             OutlinedButton(onClick = {
                 viewModel.Guardar()
                 navHostController.navigate("ConsultaNv")
-            }) {
+            }, modifier = Modifier.padding(16.dp)) {
                 Text(text = "Guardar")
             }
         }
