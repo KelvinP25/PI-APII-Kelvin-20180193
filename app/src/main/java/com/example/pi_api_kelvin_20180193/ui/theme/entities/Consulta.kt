@@ -5,16 +5,17 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.navigation.NavHostController
 
 @Composable
-fun Consulta(){
+fun Consulta( navHostController: NavHostController){
 
     Scaffold(
         topBar = {
             TopAppBar(title = { Text(text = "Consulta") })
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = { }) {
+            FloatingActionButton(onClick = { navHostController.navigate("RegistroNv") }) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = null)
             }
         },
