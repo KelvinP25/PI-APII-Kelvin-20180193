@@ -3,14 +3,13 @@ package com.example.pi_api_kelvin_20180193
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -26,21 +25,21 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PIAPIKelvin20180193Theme {
-               MyApp()
+                MyApp()
             }
         }
     }
 }
 
 @Composable
-fun MyApp(){
+fun MyApp() {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.background
     ) {
         val navHostController = rememberNavController()
 
-        NavHost(navController = navHostController, startDestination = "ConsultaNv"){
+        NavHost(navController = navHostController, startDestination = "ConsultaNv") {
             composable(route = "ConsultaNv") {
                 ConsultaPrestamosScreen(navHostController)
             }
@@ -52,10 +51,15 @@ fun MyApp(){
 }
 
 @Composable
-fun RowDeudor(deudor: Deudor){
+fun RowDeudor(deudor: Deudor) {
     Column(modifier = Modifier.fillMaxSize()) {
-        Text(text = deudor.nombre)
+        Row() {
+            Text(text = deudor.nombre, modifier = Modifier.width(width = 50.dp), style = MaterialTheme.typography.h6)
+            Text(text = deudor.monto.toString(), style = MaterialTheme.typography.h6)
+        }
+
         Text(text = deudor.concepto)
-        Text(text = deudor.monto.toString())
+
+
     }
 }
