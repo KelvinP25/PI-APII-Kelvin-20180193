@@ -49,7 +49,7 @@ fun RegistroPrestamosScreen(
                 leadingIcon = { Icon(imageVector = Icons.Filled.AttachMoney, contentDescription = null) }
             )
             OutlinedButton(onClick = {
-                if(viewModel.nombre.isNotEmpty() || viewModel.concepto.isNotEmpty() || viewModel.monto.toString().isNotEmpty()){
+                if(viewModel.nombre.isNullOrEmpty() || viewModel.concepto.isNullOrEmpty() || viewModel.monto.toString().isNullOrEmpty()){
                     Toast.makeText(validar, "No deje Campos Vacios", Toast.LENGTH_LONG).show()
                 }else {
                     viewModel.Guardar()
