@@ -53,13 +53,13 @@ fun MyApp() {
 @Composable
 fun RowDeudor(deudor: Deudor) {
     Column(modifier = Modifier.fillMaxSize()) {
-        Row() {
-            Text(text = deudor.nombre, modifier = Modifier.width(width = 50.dp), style = MaterialTheme.typography.h6)
+        Row {
+
+            Text(text = deudor.nombre, style = MaterialTheme.typography.h6, modifier = Modifier.absolutePadding(0.dp, 0.dp, 6.dp, 0.dp))
             Text(text = deudor.monto.toString(), style = MaterialTheme.typography.h6)
         }
 
-        Text(text = deudor.concepto)
-
+        Text(text = deudor.concepto, style = MaterialTheme.typography.subtitle1)
 
     }
 }
