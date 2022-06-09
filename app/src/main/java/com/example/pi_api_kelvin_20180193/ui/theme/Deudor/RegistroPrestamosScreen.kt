@@ -1,5 +1,6 @@
 package com.example.pi_api_kelvin_20180193.ui.theme.Deudor
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -8,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -17,6 +19,7 @@ fun RegistroPrestamosScreen(
     navHostController: NavHostController,
     viewModel: DeudorviewModel = hiltViewModel()
 ) {
+    var validar = LocalContext.current
 
     Scaffold(
         topBar = {
@@ -46,8 +49,12 @@ fun RegistroPrestamosScreen(
                 leadingIcon = { Icon(imageVector = Icons.Filled.AttachMoney, contentDescription = null) }
             )
             OutlinedButton(onClick = {
-                viewModel.Guardar()
-                navHostController.navigate("ConsultaNv")
+                if(viewModel.nombre.isNotEmpty() || viewModel.concepto.isNotEmpty() || viewModel.monto.toString().isNotEmpty()){
+                    Toast.makeText(validar, "No deje Campos Vacios", Toast.LENGTH_LONG).show()
+                }else {
+                    viewModel.Guardar()
+                    navHostController.navigate("ConsultaNv")
+                }
             }, modifier = Modifier.padding(16.dp)) {
                 Text(text = "Guardar")
             }
@@ -55,3 +62,4 @@ fun RegistroPrestamosScreen(
 
     }
 }
+
